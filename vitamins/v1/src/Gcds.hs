@@ -35,8 +35,9 @@ allDivisors num = reverse [x | x <- [1..num], isDivisor x num]
   get that list back!
 -}
 listIntersection :: [Int] -> [Int] -> [Int]
-listIntersection = error "Not Implemented"
-
+listIntersection _ [] = []
+listIntersection [] _ = []
+listIntersection list1 list2 = filter (`elem` list1) list2
 
 {-
   Last bit! From here, you can find a list of all common divisors by
@@ -45,6 +46,7 @@ listIntersection = error "Not Implemented"
   the first from it!
 -}
 listGcd :: Int -> Int -> Int
-listGcd = error "Not Implemented"
+listGcd a b = head (listIntersection (allDivisors a) (allDivisors b))
+  
 
 

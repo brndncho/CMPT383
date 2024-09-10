@@ -23,7 +23,7 @@ type Queue = ([Int],[Int])
   list of the pair into l2.
 -}
 empty :: Queue
-empty = error "Unimplemented"
+empty = ([], [])
 
 {-
   Now you must choose one of the lists to be the "pushing" list. When you
@@ -32,7 +32,7 @@ empty = error "Unimplemented"
   l1 is push list
 -}
 enqueue :: Queue -> Int -> Queue
-enqueue = error "Unimplemented"
+enqueue (popping, pushing) int = (popping, int:pushing)
 
 {-
   Dequeing is sometimes easy, and sometimes hard.
@@ -59,7 +59,6 @@ enqueue = error "Unimplemented"
   2) Call dequeue on this updated queue.
 -}
 dequeue :: Queue -> (Int,Queue)
-dequeue = error "Unimplemented"
-
-
-
+dequeue ([], []) = (0, empty)
+dequeue (x:popping, pushing) = (x, (popping, pushing))
+dequeue ([], pushing) =  dequeue (reverse pushing, [])

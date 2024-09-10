@@ -1,0 +1,18 @@
+/Users/brandoncho/.ghcup/ghc/9.0.2/lib/ghc-9.0.2/lib/aarch64-osx-ghc-9.0.2/rts-1.0.2/include/ghcversion.h:
+  hash: 3b6c0f16983344ce12525816947d892da98bc96f17a664531494f515b9356c81
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/.stack-work/dist/aarch64-osx/ghc-9.0.2/build/v1-test/autogen/Paths_v1.hs:
+  hash: 6772eace5b3448b2e1f1b032bbb9421d0793c70877ed47e87d55ad1c58eddfbd
+? /Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/.stack-work/dist/aarch64-osx/ghc-9.0.2/build/v1-test/autogen/cabal_macros.h
+: hash: faa86e6ba265a081691f8aa69a005539f947e66699f86df5d5c8225ee9e1a869
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/package.yaml:
+  hash: bba1afb28b57e9039b376f77db9d25b953661ec3783fa5150a69382fca2d799c
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/test/GcdsTests.hs:
+  hash: 50a2018653ab83f8fab4974d032a2c77fbf739a918ff71ffc1c7f6d559284aae
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/test/QueueTests.hs:
+  hash: 5cb5102e3bce72fb317e9d09750aa90d18186f0fc329be4d8431da5fec3e9096
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/test/TestRunner.hs:
+  hash: 8877d4698efdecca35d7a7c60f9359c6822ad2ac1d13b8bc6b888ed09347accf
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/test/TestingFramework.hs:
+  hash: 0c08424b05677905c713ae26d6e55f1b46b3bbfe05f2113a75952bdc3a319515
+/Users/brandoncho/Downloads/coding/CMPT383/vitamins/v1/v1.cabal:
+  hash: a4b62af355301ea98094bfc62d307a35a0e48fea0517224656cafa331c0c201e
