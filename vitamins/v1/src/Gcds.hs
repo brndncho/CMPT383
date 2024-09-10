@@ -25,12 +25,7 @@ isDivisor a b = mod b a == 0
   number 8, allDivisors would return [8,4,2,1].
 -}
 allDivisors :: Int -> [Int]
-allDivisors = error "Not Implemented"
-
-
-
-
-
+allDivisors num = reverse [x | x <- [1..num], isDivisor x num]
 
 {-
   Almost done! Now we would like to figure out the intersection of two lists.
