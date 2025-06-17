@@ -4,7 +4,7 @@ module Rainbow where
 import RainbowAssign 
 import qualified Data.Map as Map
 import Data.Maybe
-import Data.List
+import Data.List()
 
 -- paramenters
 pwLength, nLetters, width, height :: Int
@@ -46,17 +46,17 @@ rainbowTable w initPassword =
 
 -- findPassword: attempt to reverse a target Hash using the rainbow table
 findPassword :: RainbowTable -> Int -> Hash -> Maybe Passwd 
-findPassword table width hash = go 0
+findPassword table w hash = go 0
   where
     go :: Int -> Maybe Passwd
     go offset
-      | offset == width = Nothing -- stop if we reached all possible positions
+      | offset == w = Nothing -- stop if we reached all possible positions
       | otherwise =
           let h = iterate hashAndReduce hash !! offset
           in case Map.lookup h table of
                Nothing -> go ( offset + 1 ) -- no chain ends with hash h, continue searching
                Just p0 -> -- if we found a starting password p0
-                 let stepsToTarget = width - offset -- how many steps to reach the target hash
+                 let stepsToTarget = w - offset -- how many steps to reach the target hash
                      pwdCandidate = iterate (pwReduce . pwHash) p0 !! stepsToTarget -- keep reducing until we reach the target hash
                  in if pwHash pwdCandidate == hash
                        then Just pwdCandidate -- found a match
