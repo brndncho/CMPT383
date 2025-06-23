@@ -1,5 +1,5 @@
 -- imports
-module Rainbow where
+module Main where
 
 import RainbowAssign 
 import qualified Data.Map as Map
@@ -9,10 +9,10 @@ import Data.List()
 -- paramenters
 pwLength, nLetters, width, height :: Int
 filename :: FilePath
-pwLength = 5            -- length of each password
-nLetters = 18            -- number of letters to use in passwords: 5 -> a-e
-width = 60              -- length of each chain in the table
-height = 800           -- number of "rows" in the table
+pwLength = 8            -- length of each password
+nLetters = 5            -- number of letters to use in passwords: 5 -> a-e
+width = 40              -- length of each chain in the table
+height = 1000           -- number of "rows" in the table
 filename = "table.txt"  -- filename to store the table
 
 -- pwReduce
@@ -50,7 +50,7 @@ findPassword table w hash = go 0
   where
     go :: Int -> Maybe Passwd
     go offset
-      | offset == w = Nothing -- stop if we reached all possible positions
+      | offset > w = Nothing -- stop if we reached all possible positions
       | otherwise =
           let h = iterate hashAndReduce hash !! offset
           in case Map.lookup h table of
@@ -77,3 +77,9 @@ test2 n = do
   let hs = map pwHash pws
   let result = Data.Maybe.mapMaybe (findPassword table width) hs
   return (result, length result)
+
+main :: IO ()
+main = do
+  generateTable
+  res <- test2 10000
+  print res
